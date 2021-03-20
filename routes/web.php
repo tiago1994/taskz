@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::namespace('Site')->as('site.')->group(function () {
-    Route::get('/', 'HomeController@index')->name('index');
+Route::as('site.')->group(function () {
+    Route::get('/' , \App\Http\Livewire\Site\Home::class)->name('index');
 });
 
 Route::namespace('User')->as('user.')->middleware('auth')->group(function () {
